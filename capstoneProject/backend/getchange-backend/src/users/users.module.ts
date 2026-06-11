@@ -4,6 +4,7 @@ import { User } from './users.entity';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { CreateUserProvider } from './providers/create-user.provider';
+import { FindOneByEmailProvider } from './providers/find-one-by-email.provider';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { CreateUserProvider } from './providers/create-user.provider';
   providers: [
     UsersService,
     CreateUserProvider,
+    FindOneByEmailProvider
   ],
-  exports: [UsersService],
+  exports: [UsersService, FindOneByEmailProvider],
 })
 export class UsersModule {}

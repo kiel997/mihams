@@ -1,4 +1,6 @@
-// Main should look like this
+// Main should look like this:
+
+```ts
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -26,12 +28,14 @@ async function bootstrap() {
   console.log('🚀 Application is running on: http://localhost:3000');
 }
 void bootstrap();
+```
 
 // ----------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------
 
 // app module should look like this
 
+```ts
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -89,3 +93,4 @@ void bootstrap();
   providers: [AppService],
 })
 export class AppModule implements NestModule {}
+```

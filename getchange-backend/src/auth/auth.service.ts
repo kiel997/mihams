@@ -1,5 +1,7 @@
-import { Injectable, UnauthorizedException,} from '@nestjs/common';
-
+import {
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { FindOneByEmailProvider } from '../users/providers/find-one-by-email.provider';
@@ -46,6 +48,7 @@ export class AuthService {
 
     return {
       accessToken,
+      firstName: user.firstName,
     };
   }
 
@@ -59,7 +62,7 @@ export class AuthService {
     return {
       success: true,
       message:
-        'a reset link has been sent to your email.',
+        'A reset link has been sent to your email.',
     };
   }
 }
